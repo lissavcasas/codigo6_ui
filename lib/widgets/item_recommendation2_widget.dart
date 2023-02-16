@@ -67,6 +67,9 @@ class ItemRecommnedation2Widget extends StatelessWidget {
                     size: 14.0,
                     color: Colors.black45,
                   ),
+                  SizedBox(
+                    width: 6.0,
+                  ),
                   Text(
                     "Padamara, Jawa Tengah",
                     maxLines: 1,

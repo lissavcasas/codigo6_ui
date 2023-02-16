@@ -1,3 +1,4 @@
+import 'package:codigo6_ui/pages/custom_bottom_bar.dart';
 import 'package:codigo6_ui/widgets/item_category_widget.dart';
 import 'package:codigo6_ui/widgets/item_recommedation_widget.dart';
 import 'package:codigo6_ui/widgets/item_recommendation2_widget.dart';
@@ -208,8 +209,9 @@ class Example2Page extends StatelessWidget {
                     Container(
                       width: double.infinity,
                       height: 200,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12.0),
+                        image: const DecorationImage(
                           fit: BoxFit.cover,
                           image: NetworkImage(
                             "https://images.pexels.com/photos/1390403/pexels-photo-1390403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -220,6 +222,7 @@ class Example2Page extends StatelessWidget {
                         children: [
                           Container(
                             decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12.0),
                               gradient: LinearGradient(
                                 begin: Alignment.bottomCenter,
                                 end: Alignment.topCenter,
@@ -230,20 +233,27 @@ class Example2Page extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              const Text(
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                              ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                child: const Text(
-                                  "Information",
+                          Container(
+                            margin: const EdgeInsets.symmetric(
+                              horizontal: 18,
+                              vertical: 14.0,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                const Text(
+                                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                  style: TextStyle(color: Colors.white),
                                 ),
-                              ),
-                            ],
+                                ElevatedButton(
+                                  onPressed: () {},
+                                  child: const Text(
+                                    "Information",
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -256,33 +266,9 @@ class Example2Page extends StatelessWidget {
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              width: double.infinity,
-              height: 60,
-              color: Colors.blue,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: const [
-                  Icon(
-                    Icons.home,
-                  ),
-                  Icon(
-                    Icons.home,
-                  ),
-                  Icon(
-                    Icons.home,
-                  ),
-                  Icon(
-                    Icons.home,
-                  ),
-                ],
-              ),
-            ),
-          ),
         ],
       ),
+      bottomNavigationBar: const CustomBottomBar(),
     );
   }
 }
